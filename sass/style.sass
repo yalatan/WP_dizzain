@@ -1,0 +1,609 @@
+@import "fonts"
+@import "colors"
+
+$font-Futura-Medium: "Futura-Medium", sans-serif
+$font-Futura-Book: "Futura-Book", sans-serif
+$font-Futura-Heavy: "Futura-Heavy", sans-serif
+$font-Futura-Light: "Futura-Light", sans-serif
+$font-BeFutura-Bold: "BeFutura-Bold", sans-serif
+
+@mixin flex-center
+ display: flex
+ align-items: center
+ justify-content: center
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+@mixin box-shadow($param)
+      -webkit-box-shadow: $param
+      -moz-box-shadow: $param
+      box-shadow: $param 
+    
+  
+  
+
+
+@mixin flex-between
+  display: flex 
+  align-items: center 
+  justify-content: space-between 
+
+@mixin center-block
+  margin-left: auto 
+  margin-right: auto
+
+%white-button
+ @include flex-center
+ background-color: $white
+ font-family: $font-Futura-Medium
+ color: $color-button
+ border-radius: 30px
+ width: 153px
+ outline: none
+ height: 46px
+ font-size: 14px
+ border: none
+ cursor: pointer
+ 
+@mixin awesome($w: 100%, $h: 100%) 
+    width: $w
+    height: $h
+
+
+a
+  text-decoration: none
+body
+  background-color: $white
+
+.container
+    @include awesome(888px, 100%)
+    margin: auto
+
+.header,
+.section,
+.footer
+    width: 1440px
+    margin: auto
+
+
+.header 
+    background-image: url(images/bg.png)
+    background-repeat: no-repeat
+    height: 550px
+    background-size: 100% auto
+    background-position-x: center
+    background-position-y: -40px
+    position: relative
+    border-radius: 0px 0px 100% 100%/ 0px 0px 16% 16%
+    margin-bottom: 72px
+    overflow-y: hidden
+
+.logo 
+    height: 45px
+    margin-top: 20px
+    cursor: pointer
+    transition: all 3s
+
+.button 
+ @extend %white-button
+
+ 
+.header_h1 
+    color: $white
+    font-size: 42px
+    font-family: $font-Futura-Heavy
+    margin-top: 80px
+    letter-spacing: -0.015rem
+    line-height: 45px
+    width: 75%
+
+
+.header_p 
+    color: $white
+    font-size: 18px
+    font-family: $font-Futura-Light
+    margin-top: 30px
+    margin-bottom: 35px
+
+
+.header_image.background 
+    bottom: -27px
+    position: absolute
+    left: 49%
+    height: 89.5%
+
+
+.section_header 
+    font-family: $font-Futura-Heavy
+    font-size: 38px
+    color: $black
+    text-align: center
+    margin-bottom: 54px
+    line-height: 50px
+
+
+.about_us 
+    margin-bottom: 65px
+
+
+.about_us_content_image 
+    height: 115px
+    margin-bottom: 35px
+
+
+.about_us_content_div 
+    text-align: center
+    width: 30.5%
+
+
+.about_us_content_h4  
+    font-family: $font-Futura-Heavy
+    font-size: 18px
+    text-align: center 
+    margin-top: 16px 
+    margin-bottom: 4px 
+ 
+
+.about_us_content_p  
+    font-family: $font-Futura-Light
+    font-size: 14px 
+    color: $color-content
+    text-align: center 
+    margin-left: 15px 
+    margin-right: 15px 
+    letter-spacing: -0.01rem 
+    line-height: 20.9px 
+ 
+
+.about_us_content_text  
+    border: 1.5px solid 
+    border-radius: 3px 
+    position: relative 
+    height: 145px 
+ 
+
+.about_us_content_div:nth-child(1) .about_us_content_text  
+    border-color: $border-color-lightgreen
+ 
+
+.about_us_content_div:nth-child(1) .about_us_content_h4  
+    color: $color-text-lightgreen
+ 
+
+.about_us_content_div:nth-child(2) .about_us_content_text  
+    border-color: $border-color-green
+ 
+
+.about_us_content_div:nth-child(2) .about_us_content_h4  
+    color: $color-text-green
+ 
+
+.about_us_content_div:nth-child(3) .about_us_content_text  
+    border-color: $border-color-blue 
+ 
+
+.about_us_content_div:nth-child(3) .about_us_content_h4  
+    color: $color-text-blue 
+ 
+
+.arrow  
+  @include center-block
+  position: absolute 
+  left: 0 
+  right: 0 
+  top: -10px 
+  height: 12px 
+  z-index: 2 
+ 
+
+.wrapper  
+  @include flex-between
+ 
+
+.launch  
+    background-image: url(images/bgsection.png) 
+    height: 300px 
+    background-size: auto 100% 
+    background-position-x: center 
+    background-position-y: center 
+    background-repeat: no-repeat 
+    position: relative 
+    margin-bottom: 66px 
+ 
+
+.launch .container  
+    @include flex-center
+    flex-direction: column 
+ 
+
+.launch .section_header  
+    color: $white
+    line-height: 50px 
+    margin-bottom: 25px 
+ 
+
+.success .section_header  
+    margin-bottom: 60px 
+ 
+
+.success .header_p  
+    font-size: 23px 
+    margin-top: 0px 
+    margin-bottom: 60px 
+ 
+
+.form  
+    @include flex-center
+    flex-direction: column 
+ 
+
+.form_button  
+    background-color: $form-color 
+    color: $white
+    margin-top: 36px 
+    @include awesome(164px, 42px)
+    @include box-shadow(0px 22px 27px -2px rgba(38, 128, 187, 1))
+    transition: all 1s 
+ 
+
+input[type="email"]  
+    border: none 
+    background-color: transparent 
+    font-family: $font-Futura-Book 
+    font-size: 20px 
+    border-bottom: 1px solid $form-color
+    @include awesome(265px, 40px)
+    font-style: italic 
+    color: $white
+ 
+@mixin placeholder
+    color: $white
+    font-family: $font-Futura-Book 
+    opacity: 1 
+    font-size: 16px 
+    text-align: center 
+    font-style: normal 
+
+input[type="email"]::placeholder  
+  @include placeholder 
+ 
+
+input[type="email"]:-ms-input-placeholder  
+  @include placeholder  
+ 
+
+input[type="email"]::-ms-input-placeholder  
+  @include placeholder  
+ 
+
+.form_button  
+    margin-top: 30px 
+ 
+
+.our_team  
+    margin-bottom: 57px 
+ 
+
+.our_team_content_div  
+    width: 30.5% 
+    height: 270px 
+ 
+
+.our_team .section_header  
+    margin-bottom: 60px 
+ 
+
+.circle_div  
+  @include center-block
+  @include flex-center
+  border-radius: 50% 
+  @include awesome(170px, 170px)
+  overflow: hidden 
+  transition: all 1s 
+ 
+
+.circle_div_image 
+  @include awesome(100%, auto)
+ 
+
+.our_team_content_div:nth-child(2) .circle_div_image 
+    @include awesome(auto, 94%)
+    margin-top: 15px 
+ 
+
+.our_team_content_div:nth-child(3) .circle_div_image 
+    @include awesome(auto, 94%)
+    margin-top: 15px 
+ 
+
+.our_team_content_h4  
+    font-family: $font-Futura-Heavy
+    font-size: 18px 
+    color: $color-our_team 
+    text-align: center 
+    line-height: 31px 
+    margin-top: 15px 
+ 
+
+.our_team_content_p  
+    font-family: $font-Futura-Book 
+    font-size: 13px 
+    color: $color-our_team 
+    text-align: center 
+ 
+
+.footer  
+    background-image: url(images/footer_foto.png) 
+    height: 490px 
+    background-size: 100% auto 
+    background-position-x: center 
+    background-position-y: 0 
+    background-repeat: no-repeat 
+    position: relative 
+    text-align: center 
+ 
+
+.footer_head_text  
+    font-family: $font-BeFutura-Bold 
+    font-size: 42px 
+    color: $white 
+    text-align: center 
+    width: 80% 
+    line-height: 52px 
+    margin-bottom: 25px 
+ 
+
+.footer_copyright  
+    font-family: $font-Futura-Book 
+    font-size: 13.6px 
+    color: $color-copyright 
+    text-align: left 
+    @include flex-between 
+    position: absolute 
+    bottom: 17px 
+    width: 100% 
+ 
+
+.footer_button  
+    @include center-block
+    @include awesome(165px, 58px)
+    margin-top: 15px 
+    margin-bottom: 33px
+ 
+
+.footer .container  
+    @include flex-center
+    flex-direction: column 
+    position: relative 
+ 
+
+a.footer_copyright_link  
+    color: $color-copyright 
+    text-decoration-line: underline 
+ 
+
+@media screen and (max-width: 1438px)  
+    .header,
+    .section,
+    .footer  
+        width: 100% 
+     
+    .header  
+        height: 37vw 
+     
+    .header_h1  
+        font-size: 2.5em 
+        width: 65% 
+     
+    .header_image.background  
+        bottom: -4% 
+        left: 49% 
+        height: 33vw 
+     
+    .footer  
+        height: 34vw 
+     
+ 
+
+@media screen and (max-width: 1170px)  
+    .header  
+        height: 36vw 
+     
+ 
+
+@media screen and (max-width: 1110px)  
+    .container  
+        width: 90% 
+     
+    .header  
+      @include awesome(100%, 443px)
+      min-height: 443px
+      background-size: auto 100% 
+      background-position-y: -4px 
+      margin-bottom: 72px 
+     
+    .header_h1  
+        font-size: 2.5em 
+        width: 65% 
+        margin-top: 20px 
+        text-align: center 
+     
+    .header_image.background  
+        display: none 
+     
+    .header .container  
+      @include flex-center
+      flex-direction: column 
+      position: relative  
+     
+    .header_image.logo  
+        position: absolute 
+        top: 20px 
+        left: 0 
+     
+    .about_us_content.wrapper  
+        display: flex 
+        align-items: center 
+        justify-content: space-around 
+        flex-wrap: wrap 
+     
+    .about_us_content_div  
+        margin-bottom: 30px 
+        width: 45% 
+     
+    .footer  
+        height: 34vw 
+        min-height: 400px 
+        background-size: auto 100% 
+        background-position-y: center 
+     
+    .footer_head_text  
+        font-size: 2.5em 
+        width: 90% 
+     
+ 
+
+@media screen and (max-width: 650px)  
+    .our_team_content.wrapper  
+        flex-wrap: wrap 
+     
+    .our_team_content_div 
+     @include awesome(45%, 270px)
+     
+    .about_us_content_text  
+        height: 170px 
+     
+ 
+
+@media screen and (max-width: 578px)  
+    .footer_copyright  
+        flex-direction: column 
+        justify-content: center 
+     
+    .footer_copyright p  
+        text-align: center 
+     
+    .footer_head_text  
+        font-size: 25px 
+        line-height: 32px 
+     
+    .our_team_content_div  
+        width: 90% 
+     
+    .our_team_content.wrapper  
+        justify-content: center 
+     
+    .launch .section_header  
+        line-height: 30px 
+     
+    .section_header  
+        font-size: 28px 
+        margin-bottom: 54px 
+        line-height: 30px 
+     
+    .about_us_content_div  
+        width: 90% 
+     
+    .header_p  
+        text-align: center 
+     
+    .header_h1  
+        width: 90% 
+        line-height: 40px 
+        border-top: 1px double $white
+        margin-top: 0 
+        padding-top: 20px 
+     
+    .header_image.logo  
+        top: 5px 
+        left: 10px 
+     
+ 
+
+
+/*hover*/
+
+.about_us_content_div:nth-child(1):hover 
+  @include box-shadow(2px 0px 20px 10px rgba(82, 207, 200, 1))
+  border-radius: 3px 
+ 
+
+.about_us_content_div:nth-child(2):hover
+  @include box-shadow(2px 0px 20px 10px rgba(87, 183, 114, 1))
+  border-radius: 3px 
+ 
+
+.about_us_content_div:nth-child(3):hover 
+  @include box-shadow(2px 0px 20px 10px rgba(34, 95, 209, 1))
+  border-radius: 3px 
+ 
+
+.logo:hover  
+    transform: rotate(360deg) 
+    transition: all 3s 
+ 
+
+a:hover  
+    text-decoration: none 
+    cursor: pointer 
+ 
+
+.circle_div:hover  
+    transform: scale(2) 
+    transition: all 1s 
+ 
+
+.form_button:hover  
+    letter-spacing: 0.5em 
+    transition: all 1s 
+ 
+
+
+/* fadeIn, fadeOut*/
+
++keyframes(show) 
+    from  
+        display: none 
+        opacity: 0 
+     
+    to  
+        display: flex 
+        opacity: 1 
+     
+ 
+
+.launch .success  
+    display: none 
+ 
+
+.launch .show  
+    display: flex 
+    opacity: 1 
+    transition: all 1s 
+    animation: show 3s 1 linear 
+ 
++keyframes(hide) 
+    from  
+        display: flex 
+        opacity: 1 
+     
+    to  
+        display: none 
+        opacity: 0 
+     
+ 
+
+.launch .hide  
+    display: none 
+    opacity: 0 
+    transition: all 1s 
+    animation: hide 3s 1 linear 
+ 
