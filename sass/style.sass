@@ -532,20 +532,29 @@ a.footer_copyright_link
 /*hover*/
 
 .about_us_content_div:nth-child(1):hover 
-  @include box-shadow(2px 0px 20px 10px rgba(82, 207, 200, 1))
+  @include box-shadow(2px 0px 20px 10px $border-color-lightgreen)
   border-radius: 3px 
  
 
 .about_us_content_div:nth-child(2):hover
-  @include box-shadow(2px 0px 20px 10px rgba(87, 183, 114, 1))
+  @include box-shadow(2px 0px 20px 10px $border-color-green)
   border-radius: 3px 
  
 
 .about_us_content_div:nth-child(3):hover 
-  @include box-shadow(2px 0px 20px 10px rgba(34, 95, 209, 1))
+  @include box-shadow(2px 0px 20px 10px $border-color-blue)
   border-radius: 3px 
  
-
+.footer_button:hover, 
+.header_button:hover 
+  @include box-shadow(inset 0px 0px 46px 16px $color-text-blue)
+  color: $white
+  transition: all 1s
+  
+.footer_button, 
+.header_button
+  transition: all 2s
+  
 .logo:hover  
     transform: rotate(360deg) 
     transition: all 3s 
@@ -560,10 +569,10 @@ a:hover
     transform: scale(2) 
     transition: all 1s 
  
-
 .form_button:hover  
     letter-spacing: 0.5em 
-    transition: all 1s 
+    transition: all 1s
+ 
  
 
 
